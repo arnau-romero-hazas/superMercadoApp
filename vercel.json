@@ -12,9 +12,9 @@
     "api": {
       "root": "apps/api/",
       "framework": "nestjs",
-      "entrypoint": "dist/main.js",
-      "buildCommand": "yarn workspace @super/shared build && yarn build",
-      "functions": { "dist/main.js": { "maxDuration": 300 } }
+      "entrypoint": "server.js",
+      "buildCommand": "yarn workspace @super/shared build && yarn build:vercel",
+      "functions": { "server.js": { "maxDuration": 300 } }
     }
   },
   "rewrites": [

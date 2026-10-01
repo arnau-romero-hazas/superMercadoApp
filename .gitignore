@@ -6,3 +6,4 @@ dev-dist/
 !.yarn/releases
 *.tsbuildinfo
 .vercel
+.env*.local

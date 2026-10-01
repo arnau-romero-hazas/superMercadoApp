@@ -86,13 +86,20 @@ gratuito de Vercel una conexión abierta consume memoria todo el rato y agotarí
 ## Desplegar en Vercel
 
 Un solo proyecto con [Vercel Services](https://vercel.com/docs/services) (`vercel.json` en la raíz):
-la web y el API comparten dominio, `/api/*` va a NestJS y el resto a la web.
+la web y el API comparten dominio, `/api/*` va a NestJS y el resto a la web. Producción:
+https://supermercadoapp-zeta.vercel.app
+
+El API arranca desde `apps/api/server.js`, que importa `dist/main.js`: Vercel exige que el punto de
+entrada exista antes de compilar, y compilar `src/main.ts` directamente no resuelve los alias `@/`.
+`build:vercel` añade `dist/package.json` con `"type": "module"` porque Vercel coloca `dist/` en la
+raíz de la función.
 
 1. MongoDB Atlas: crea un clúster M0 en AWS Frankfurt (el API corre en `fra1`). En *Network Access*
    permite `0.0.0.0/0`, porque Vercel no tiene IPs fijas en el plan gratuito.
 2. Vercel: importa el repositorio dejando el *Root Directory* en la raíz y añade estas variables:
    `MONGODB_URI`, `JWT_SECRET`, `JWT_REFRESH_SECRET`, `CRON_SECRET` (cada secreto de 16 caracteres o más)
-   y `CORS_ORIGIN` con el dominio de producción.
+   `CORS_ORIGIN` con el dominio de producción y `ENABLE_EXPERIMENTAL_COREPACK=1`, para que Vercel use
+   Yarn 4 (el de `packageManager`) en lugar de Yarn 1.
 3. Tras desplegar, crea el hogar y comprueba en los logs del API que la sincronización termina.
 
 Límites del plan gratuito que afectan a la app: las funciones duran como mucho 5 minutos (la
