@@ -1,0 +1,20 @@
+{
+  "name": "supermercado-app",
+  "private": true,
+  "packageManager": "yarn@4.13.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools"
+  ],
+  "scripts": {
+    "db:up": "docker-compose -p supermercado up -d mongo",
+    "db:down": "docker-compose -p supermercado down",
+    "build:shared": "yarn workspace @super/shared build",
+    "dev:api": "yarn workspace @super/api dev",
+    "dev:web": "yarn workspace @super/web dev",
+    "build": "yarn workspace @super/shared build && yarn workspace @super/api build && yarn workspace @super/web build",
+    "typecheck": "yarn workspace @super/shared build && yarn workspace @super/api typecheck && yarn workspace @super/web typecheck",
+    "test": "yarn workspace @super/web test"
+  }
+}
