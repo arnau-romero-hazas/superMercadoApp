@@ -1,4 +1,4 @@
-# Despensa
+# TraeLeche
 
 Despensa y lista de la compra compartidas para un hogar, con catálogo real de Mercadona.
 
@@ -110,3 +110,7 @@ momento entre las 3:00 y las 3:59 UTC.
 
 - La API de Mercadona no es pública. Si cambia su formato, la sincronización falla y se registra
   en el log, pero la app sigue funcionando con la caché y con los productos propios.
+
+## Licencia
+
+[PolyForm Noncommercial 1.0.0](LICENSE). Puedes usar, modificar y compartir el código y contribuir con pull requests, siempre que no sea con fines comerciales. Para cualquier uso comercial, contacta con el autor.

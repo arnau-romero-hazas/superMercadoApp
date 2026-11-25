@@ -47,7 +47,7 @@ export const Acceso = () => {
     <div className="mx-auto flex min-h-dvh max-w-sm flex-col justify-center px-4 py-10">
       <div className="mb-8 text-center">
         <img src="/icono.svg" alt="" className="mx-auto mb-4 size-16" />
-        <h1 className="text-2xl font-bold">Despensa</h1>
+        <h1 className="text-2xl font-bold">TraeLeche</h1>
         <p className="mt-1 text-slate-500">La compra del súper, entre los dos</p>
       </div>
       <Tarjeta>
@@ -70,7 +70,7 @@ export const Acceso = () => {
           </Boton>
         </form>
       </Tarjeta>
-      <button type="button" onClick={cambiarModo} className="mt-6 text-sm font-medium text-green-700">
+      <button type="button" onClick={cambiarModo} className="mt-6 text-sm font-medium text-marca-700">
         {modo === 'login' ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Entra'}
       </button>
     </div>

@@ -17,7 +17,7 @@ const FilaLista = ({ producto, onAlternar }: { producto: ProductoHogarVista; onA
     <button type="button" onClick={onAlternar} aria-pressed={producto.enCarro} className="flex w-full items-center gap-3 px-3 py-2.5 text-left">
       <span
         className={`flex size-7 shrink-0 items-center justify-center rounded-full border-2 ${
-          producto.enCarro ? 'border-green-700 bg-green-700 text-white' : 'border-slate-300 text-transparent'
+          producto.enCarro ? 'border-marca-700 bg-marca-700 text-white' : 'border-slate-300 text-transparent'
         }`}
       >
         <IconoCheck className="size-4" />
@@ -109,7 +109,7 @@ export const Lista = () => {
       <div className="flex items-end justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold">Lista</h1>
-          <Link to="/compras" className="text-sm font-medium text-green-700">
+          <Link to="/compras" className="text-sm font-medium text-marca-700">
             Compras anteriores
           </Link>
         </div>
@@ -122,7 +122,7 @@ export const Lista = () => {
         ) : null}
       </div>
 
-      {aviso === null ? null : <p className="rounded-xl bg-green-50 px-3 py-2 text-sm text-green-800">{aviso}</p>}
+      {aviso === null ? null : <p className="rounded-xl bg-marca-50 px-3 py-2 text-sm text-marca-800">{aviso}</p>}
       <MensajeError mensaje={consulta.mensaje(actualizar.error) ?? consulta.mensaje(finalizar.error)} />
 
       {lista.length === 0 ? <Vacio titulo="No falta nada 🎉">Cuando algo se acabe, márcalo en la despensa.</Vacio> : null}

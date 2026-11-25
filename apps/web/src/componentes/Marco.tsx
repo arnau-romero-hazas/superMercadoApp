@@ -10,7 +10,7 @@ const Pestana = ({ a, etiqueta, icono, insignia }: { a: string; etiqueta: string
   <NavLink
     to={a}
     className={({ isActive }) =>
-      `relative flex flex-1 flex-col items-center gap-0.5 py-2 text-xs font-medium ${isActive ? 'text-green-700' : 'text-slate-500'}`
+      `relative flex flex-1 flex-col items-center gap-0.5 py-2 text-xs font-medium ${isActive ? 'text-marca-700' : 'text-slate-500'}`
     }
   >
     {icono}
@@ -41,7 +41,7 @@ export const Marco = ({ hogarNombre }: Props) => {
         <Link
           to="/anadir"
           aria-label="Añadir producto"
-          className="fixed right-[max(1rem,calc(50%-16rem+1rem))] bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex size-14 items-center justify-center rounded-full bg-green-700 text-white shadow-lg hover:bg-green-800"
+          className="fixed right-[max(1rem,calc(50%-16rem+1rem))] bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex size-14 items-center justify-center rounded-full bg-marca-700 text-white shadow-lg hover:bg-marca-800"
         >
           <IconoMas />
         </Link>

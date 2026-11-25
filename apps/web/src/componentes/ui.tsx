@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react
 type Variante = 'primario' | 'secundario' | 'peligro' | 'fantasma';
 
 const estilosVariante: Record<Variante, string> = {
-  primario: 'bg-green-700 text-white hover:bg-green-800 disabled:bg-green-700/50',
+  primario: 'bg-marca-700 text-white hover:bg-marca-800 disabled:bg-marca-700/50',
   secundario: 'bg-white text-slate-800 ring-1 ring-slate-300 ring-inset hover:bg-slate-100 disabled:opacity-50',
   peligro: 'bg-white text-rose-700 ring-1 ring-rose-300 ring-inset hover:bg-rose-50 disabled:opacity-50',
   fantasma: 'text-slate-600 hover:bg-slate-100 disabled:opacity-50',
@@ -30,7 +30,7 @@ export const Campo = ({ etiqueta, id, className = '', ...resto }: CampoProps) =>
     <input
       id={id}
       {...resto}
-      className={`min-h-11 rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-green-700 focus:ring-2 focus:ring-green-700/20 ${className}`}
+      className={`min-h-11 rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-marca-700 focus:ring-2 focus:ring-marca-700/20 ${className}`}
     />
   </label>
 );

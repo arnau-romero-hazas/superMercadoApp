@@ -36,7 +36,7 @@ export const Ajustes = () => {
     const mensaje = `Únete a nuestra despensa "${hogar.nombre}" con el código ${hogar.codigoInvitacion}: ${window.location.origin}`;
     try {
       if (typeof navigator.share === 'function') {
-        await navigator.share({ title: 'Despensa', text: mensaje });
+        await navigator.share({ title: 'TraeLeche', text: mensaje });
         return;
       }
       await navigator.clipboard.writeText(hogar.codigoInvitacion);
@@ -58,7 +58,7 @@ export const Ajustes = () => {
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold">Ajustes</h1>
-      {aviso === null ? null : <p className="rounded-xl bg-green-50 px-3 py-2 text-sm text-green-800">{aviso}</p>}
+      {aviso === null ? null : <p className="rounded-xl bg-marca-50 px-3 py-2 text-sm text-marca-800">{aviso}</p>}
 
       <Tarjeta>
         <h2 className="mb-1 font-semibold">Invitar a tu pareja</h2>
@@ -73,7 +73,7 @@ export const Ajustes = () => {
         </div>
         <ul className="mt-4 flex flex-wrap gap-2">
           {hogar.miembros.map((miembro) => (
-            <li key={miembro.id} className="rounded-full bg-green-50 px-3 py-1 text-sm text-green-800">
+            <li key={miembro.id} className="rounded-full bg-marca-50 px-3 py-1 text-sm text-marca-800">
               {miembro.nombre}
               {miembro.id === usuario.id ? ' (tú)' : ''}
             </li>

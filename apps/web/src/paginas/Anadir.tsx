@@ -40,7 +40,7 @@ export const Anadir = () => {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Añadir</h1>
-        <Link to="/" className="text-sm font-medium text-green-700">
+        <Link to="/" className="text-sm font-medium text-marca-700">
           Hecho
         </Link>
       </div>
@@ -69,7 +69,7 @@ export const Anadir = () => {
           setTexto(e.target.value);
           setAviso(null);
         }}
-        className="min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-green-700"
+        className="min-h-12 rounded-xl border border-slate-300 bg-white px-3 text-base outline-none focus:border-marca-700"
       />
 
       {catalogoListo || estadoCatalogo.isPending ? null : (
@@ -77,15 +77,15 @@ export const Anadir = () => {
           <Spinner /> Preparando el catálogo del súper. Puede tardar un par de minutos.
         </p>
       )}
-      {aviso === null ? null : <p className="rounded-xl bg-green-50 px-3 py-2 text-sm text-green-800">{aviso}</p>}
+      {aviso === null ? null : <p className="rounded-xl bg-marca-50 px-3 py-2 text-sm text-marca-800">{aviso}</p>}
       <MensajeError mensaje={consulta.mensaje(crear.error) ?? consulta.mensaje(busqueda.error)} />
 
       <button
         type="button"
         onClick={() => setCreando(true)}
-        className="flex min-h-12 items-center gap-3 rounded-2xl border-2 border-dashed border-slate-300 bg-white px-4 text-left text-sm hover:border-green-700"
+        className="flex min-h-12 items-center gap-3 rounded-2xl border-2 border-dashed border-slate-300 bg-white px-4 text-left text-sm hover:border-marca-700"
       >
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-marca-50 text-marca-700">
           <IconoMas className="size-5" />
         </span>
         <span>
@@ -119,7 +119,7 @@ export const Anadir = () => {
                   </span>
                 </span>
                 {yaEsta ? (
-                  <span className="shrink-0 text-xs font-medium text-green-700">Ya añadido ✓</span>
+                  <span className="shrink-0 text-xs font-medium text-marca-700">Ya añadido ✓</span>
                 ) : (
                   <Boton
                     variante="secundario"

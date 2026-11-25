@@ -17,7 +17,7 @@ export const Compras = () => {
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Compras</h1>
-        <Link to="/lista" className="text-sm font-medium text-green-700">
+        <Link to="/lista" className="text-sm font-medium text-marca-700">
           Volver a la lista
         </Link>
       </div>

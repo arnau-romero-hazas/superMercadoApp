@@ -41,7 +41,7 @@ export const Despensa = () => {
           placeholder="Buscar en casa…"
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
-          className="min-h-11 rounded-xl border border-slate-300 bg-white px-3 outline-none focus:border-green-700"
+          className="min-h-11 rounded-xl border border-slate-300 bg-white px-3 outline-none focus:border-marca-700"
         />
       ) : null}
       <MensajeError mensaje={consulta.mensaje(actualizar.error)} />

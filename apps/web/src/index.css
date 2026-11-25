@@ -2,6 +2,9 @@
 
 @theme {
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --color-marca-50: #f1f7ef;
+  --color-marca-700: #2d5a27;
+  --color-marca-800: #234a1f;
 }
 
 html,
