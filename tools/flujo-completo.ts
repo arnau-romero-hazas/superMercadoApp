@@ -38,19 +38,19 @@ paso('Registrar a dos miembros');
 const ana = await pedir('POST', '/auth/registro', sesionAuthVistaSchema, null, {
   email: `ana-${sufijo}@prueba.local`,
   nombre: 'Ana',
-  password: 'contrasena-segura',
+  password: 'Contrasena-segura1',
 });
 const luis = await pedir('POST', '/auth/registro', sesionAuthVistaSchema, null, {
   email: `luis-${sufijo}@prueba.local`,
   nombre: 'Luis',
-  password: 'contrasena-segura',
+  password: 'Contrasena-segura1',
 });
 console.log(ana.usuario, luis.usuario);
 
 paso('Login y refresh');
 const login = await pedir('POST', '/auth/login', sesionAuthVistaSchema, null, {
   email: ana.usuario.email,
-  password: 'contrasena-segura',
+  password: 'Contrasena-segura1',
 });
 await pedir('POST', '/auth/refresh', sesionAuthVistaSchema, null, { refreshToken: login.refreshToken });
 console.log('ok');

@@ -4,10 +4,23 @@ import { categoriaSchema, estadoProductoSchema, supermercadoSchema } from './dom
 const emailSchema = z.string().trim().toLowerCase().pipe(z.email('Email no válido'));
 const codigoPostalSchema = z.string().trim().regex(/^\d{5}$/, 'El código postal debe tener 5 dígitos');
 
+export const requisitosPassword: { texto: string; patron: RegExp }[] = [
+  { texto: 'Al menos 8 caracteres', patron: /^[\s\S]{8,}$/u },
+  { texto: 'Una mayúscula', patron: /\p{Lu}/u },
+  { texto: 'Una minúscula', patron: /\p{Ll}/u },
+  { texto: 'Un número', patron: /\p{N}/u },
+  { texto: 'Un símbolo (!, ?, #, …)', patron: /[^\p{L}\p{N}\s]/u },
+];
+
+const passwordNuevaSchema = requisitosPassword.reduce(
+  (schema, requisito) => schema.regex(requisito.patron, `La contraseña debe tener ${requisito.texto.toLowerCase()}`),
+  z.string().max(128),
+);
+
 export const registroSchema = z.object({
   email: emailSchema,
   nombre: z.string().trim().min(1, 'El nombre es obligatorio').max(50),
-  password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres').max(128),
+  password: passwordNuevaSchema,
 });
 export type RegistroPeticion = z.infer<typeof registroSchema>;
 
